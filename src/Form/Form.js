@@ -12,11 +12,27 @@ constructor() {
 }
 
     handleChange = (event) => {
-        this.setState({  });
+        const {name, date, time, number} = event.target
+        this.setState({ 
+            [name]: this.state.name,
+            [date]: this.state.date,
+            [time]: this.state.time,
+            [number]: this.state.number,
+         });
     }
 
-    submitReservation() {
-        
+    submitReservation = () => {
+   
+        const newRes = {
+            ...this.state
+        }
+        this.props.addRes(newRes)
+        this.setState({
+            submittedName: this.state.name,
+            submittedTime: this.state.time, 
+            submittedDate: this.state.password,
+            submittedNumber: this.state.number
+        })
         console.log("click")
       
     }

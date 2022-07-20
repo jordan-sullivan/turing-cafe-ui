@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "../Card/Card"
+import "./CardContainer.css"
 
 function CardContainer({reservations}) {
 
@@ -12,7 +13,7 @@ function CardContainer({reservations}) {
     })
 
     return(
-        <div>
+        <div className="wrapper">
             {singleReservation}
         </div>
     )
