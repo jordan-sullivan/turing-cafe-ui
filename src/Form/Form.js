@@ -1,29 +1,39 @@
 import React, { Component } from "react"
 
 class Form extends Component {
+constructor() {
+    super()
+    this.state={
+        name:"",
+        date:"",
+        time:"",
+        number:0,
+    }
+}
 
-
-    handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value });
+    handleChange = (event) => {
+        this.setState({  });
     }
 
     submitReservation() {
         
+        console.log("click")
+      
     }
 
     render() {
         return(
             <form>
                 <input
-                    type="name"
+                    type="text"
                     placeholder='Name'
-                    name='name'
+                    name="name"
                     value={this.state.name}
                     onChange={event => this.handleChange(event)}
                 />
 
                 <input
-                    type="date"
+                    type="text"
                     placeholder="Date (mm/dd)"
                     name="date"
                     value={this.state.date}
@@ -31,7 +41,7 @@ class Form extends Component {
                 />
 
                 <input
-                    type="time"
+                    type="text"
                     placeholder="Time"
                     name="time"
                     value={this.state.time}
@@ -46,7 +56,7 @@ class Form extends Component {
                     onChange={event => this.handleChange(event)}
                 />
 
-                <button onClick={submitReservation}>Make Reservation</button>
+                <button onClick={this.submitReservation}>Make Reservation</button>
             </form>
         )
     }
